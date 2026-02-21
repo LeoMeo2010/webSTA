@@ -39,8 +39,8 @@ export default function Layout() {
               background: 'linear-gradient(135deg, #7c52ff, #f97316)',
               borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontFamily: 'JetBrains Mono, monospace', fontSize: '0.85rem', color: 'white', fontWeight: 700
-            }}>K</div>
-            KotlinEval
+            }}>STA</div>
+            Web STA
           </div>
           <div style={{ display: 'flex', gap: '0.25rem' }}>
             {navLinks.map(link => (
