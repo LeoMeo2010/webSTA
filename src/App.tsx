@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useAuth } from '@/hooks/useAuth'
 import LoginPage from '@/pages/LoginPage'
-import RegisterPage from '@/pages/RegisterPage'
 import ProfilePage from '@/pages/ProfilePage'
 import AdminDashboard from '@/pages/admin/AdminDashboard'
 import AdminExercises from '@/pages/admin/AdminExercises'
@@ -35,7 +34,6 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
         <Route path="/" element={<ProtectedRoute><RoleRedirect /></ProtectedRoute>} />
 
         {/* Admin routes */}
