@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: {
         mono: ['"JetBrains Mono"', 'monospace'],
-        sans: ['Syne', 'sans-serif'],
+        sans: ['Huninn', 'sans-serif'],
       },
       colors: {
         bg: '#0a0e17',
