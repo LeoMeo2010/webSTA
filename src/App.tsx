@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useAuth } from '@/hooks/useAuth'
 import LoginPage from '@/pages/LoginPage'
 import ProfilePage from '@/pages/ProfilePage'
+import AnnouncementsPage from '@/pages/AnnouncementsPage'
 import AdminDashboard from '@/pages/admin/AdminDashboard'
 import AdminExercises from '@/pages/admin/AdminExercises'
 import AdminExerciseForm from '@/pages/admin/AdminExerciseForm'
@@ -9,9 +10,12 @@ import AdminSubmissions from '@/pages/admin/AdminSubmissions'
 import AdminGrade from '@/pages/admin/AdminGrade'
 import AdminUsers from '@/pages/admin/AdminUsers'
 import AdminInviteUser from '@/pages/admin/AdminInviteUser'
+import AdminChat from '@/pages/admin/AdminChat'
+import AdminSolution from '@/pages/admin/AdminSolution'
 import StudentDashboard from '@/pages/student/StudentDashboard'
 import StudentExercise from '@/pages/student/StudentExercise'
 import StudentGrades from '@/pages/student/StudentGrades'
+import StudentSolution from '@/pages/student/StudentSolution'
 import Layout from '@/components/shared/Layout'
 
 function ProtectedRoute({ children, role }: { children: React.ReactNode; role?: 'admin' | 'student' }) {
@@ -42,10 +46,13 @@ export default function App() {
           <Route path="exercises" element={<AdminExercises />} />
           <Route path="exercises/new" element={<AdminExerciseForm />} />
           <Route path="exercises/:id/edit" element={<AdminExerciseForm />} />
+          <Route path="exercises/:id/solution" element={<AdminSolution />} />
           <Route path="submissions" element={<AdminSubmissions />} />
           <Route path="submissions/:id/grade" element={<AdminGrade />} />
           <Route path="users" element={<AdminUsers />} />
           <Route path="users/new" element={<AdminInviteUser />} />
+          <Route path="announcements" element={<AnnouncementsPage />} />
+          <Route path="chat" element={<AdminChat />} />
           <Route path="profile" element={<ProfilePage />} />
         </Route>
 
@@ -53,7 +60,9 @@ export default function App() {
         <Route path="/student" element={<ProtectedRoute role="student"><Layout /></ProtectedRoute>}>
           <Route index element={<StudentDashboard />} />
           <Route path="exercises/:id" element={<StudentExercise />} />
+          <Route path="exercises/:id/solution" element={<StudentSolution />} />
           <Route path="grades" element={<StudentGrades />} />
+          <Route path="announcements" element={<AnnouncementsPage />} />
           <Route path="profile" element={<ProfilePage />} />
         </Route>
       </Routes>
